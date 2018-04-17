@@ -11,39 +11,32 @@ const filesToCache = [
     "/styles/normalize.css",
     "/styles/main.css",
     "/scripts/classic.js",
-    "/scripts/hello.js",
-    "/scripts/app.js"
+    "/scripts/app.js",
+    "/scripts/hello.js"
 ];
 
-function logSendMessage(message) {
-    console.log(message);
+function sendMessage(message) {
     self.clients.matchAll({ includeUncontrolled: true, type: "window" }).then(clients => {
         clients.forEach(client => client.postMessage(message));
     });
 }
 
 self.addEventListener("install", event => {
-    logSendMessage("[SW] Install");
+    sendMessage("[SW] Install");
 
     event.waitUntil(
-        caches.open(cacheName).then(cache => {
-            const promises = [];
-            filesToCache.forEach(file => {
-                logSendMessage(`[SW] cache.add ${file}`);
-                const promise = cache.add(file).catch(error => logSendMessage(`<em>[SW] Oops! ${error}</em>`));
-                promises.push(promise);
-            })
-            // return promises;
-
-            logSendMessage("[SW] cache.addAll");
-            // To make Chrome crash, do not remove the last file before calling cache.addAll
-            const files = filesToCache.slice(-1);
-            return cache.addAll(files).catch(error => logSendMessage(`<em>[SW] Oops! ${error}</em>`));
-        })
+        Promise.all(
+            filesToCache.map(file =>
+                caches.open(cacheName).then(cache => {
+                    return cache.add(file)
+                        .then(() => { sendMessage(`[SW] cache.add ${file}`); })
+                        .catch(error => sendMessage(`<em>[SW] cache.add ${file} ${error}</em>`));
+                })
+            ))
     );
 });
 
 self.addEventListener("fetch", event => {
-    logSendMessage(`[SW] Fetch ${JSON.stringify(event)}`);
+    sendMessage(`[SW] Fetch ${JSON.stringify(event)}`);
     event.respondWith(caches.match(event.request).then(response => response || fetch(event.request)));
 });
