@@ -1,6 +1,6 @@
 /*
  *  SWESMIT. Copyright (c) 2018 HWALab. MIT License.
- *  https://github.com/hwalab/swesmit/
+ *  https://github.com/hwalab-developer/swesmit
  */
 
 /* eslint-disable no-console */

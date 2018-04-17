@@ -1,6 +1,6 @@
 /*
  *  SWESMIT. Copyright (c) 2018 HWALab. MIT License.
- *  https://github.com/hwalab/swesmit/
+ *  https://github.com/hwalab-developer/swesmit
  */
 
 body {
@@ -9,7 +9,13 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    padding: 2rem;
+    padding: 1rem;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding: 2rem;
+    }
 }
 
 a {
