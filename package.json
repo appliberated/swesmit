@@ -1,0 +1,18 @@
+{
+    "name": "swesmit",
+    "version": "1.0.0",
+    "description": "Service Worker ECMAScript Modules Issue Tester",
+    "keywords": [],
+    "author": "HWALab",
+    "license": "MIT",
+    "eslintConfig": {
+        "env": {
+            "browser": true,
+            "es6": true
+        },
+        "extends": "eslint:recommended",
+        "parserOptions": {
+            "sourceType": "module"
+        }
+    }
+}

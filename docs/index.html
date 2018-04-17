@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWESMIT - Service Worker ECMAScript Modules Issue Tester</title>
+    <meta name="description" content="Service Worker ECMAScript Modules Issue Tester">
+
+    <link rel="stylesheet" href="/styles/normalize.css">
+    <link rel="stylesheet" href="/styles/main.css">
+
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#FF0000">
+    <link rel="apple-touch-icon" href="/images/manifest/icons/app-icon-180.png">
+</head>
+
+<body>
+    <header>
+        <h1 class="mb0">SWESMIT</h1>
+        <p class="mb0">Service Worker ECMAScript Modules Issue Tester</p>
+        <p><a href="https://github.com/hwalab/swesmit/" target="_blank" rel="noopener">https://github.com/hwalab/swesmit/</a></p>
+    </header>
+
+    <p id="browser"></p>
+
+    <p id="log" class="log"></p>
+
+    <script src="/scripts/classic.js"></script>
+    <script type="module" src="/scripts/app.js"></script>
+
+    <script>
+        const log = document.getElementById("log");
+        function dualLog(message) {
+            console.log(message);
+            log.innerHTML += `${message}<br>`;
+        }
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/sw.js').then(function (registration) {
+                    // Registration was successful
+                    dualLog(`ServiceWorker registration successful with scope: ${registration.scope}`);
+                }, function (err) {
+                    // Registration failed :(
+                    dualLog(`ServiceWorker registration failed: ${err}`);
+                });
+            });
+
+            navigator.serviceWorker.addEventListener('message', function (event) {
+                dualLog(event.data);
+            });
+        }
+    </script>
+</body>
+
+</html>
