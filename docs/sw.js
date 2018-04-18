@@ -3,9 +3,7 @@
  *  https://github.com/hwalab-developer/swesmit
  */
 
-/* eslint-disable no-console */
-
-const cacheName = "cache-1";
+const cacheName = "cache-2";
 const filesToCache = [
     "index.html",
     "/styles/normalize.css",
@@ -22,7 +20,7 @@ function sendMessage(message) {
 }
 
 self.addEventListener("install", event => {
-    sendMessage("[SW] Install");
+    sendMessage("[SW] Install event");
 
     event.waitUntil(
         Promise.all(
@@ -30,13 +28,13 @@ self.addEventListener("install", event => {
                 caches.open(cacheName).then(cache => {
                     return cache.add(file)
                         .then(() => { sendMessage(`[SW] cache.add ${file}`); })
-                        .catch(error => sendMessage(`<em>[SW] cache.add ${file} ${error}</em>`));
+                        .catch(error => sendMessage(`<strong>[SW] cache.add ${file} ${error}</strong>`));
                 })
             ))
     );
 });
 
 self.addEventListener("fetch", event => {
-    sendMessage(`[SW] Fetch ${JSON.stringify(event)}`);
+    sendMessage(`[SW] Fetch ${event.request.url}`);
     event.respondWith(caches.match(event.request).then(response => response || fetch(event.request)));
 });

@@ -17,39 +17,34 @@
 
 <body>
     <header>
-        <h1 class="mb0">SWESMIT</h1>
-        <p class="mb0">Service Worker ECMAScript Modules Issue Tester</p>
-        <p><a href="https://github.com/hwalab-developer/swesmit" target="_blank" rel="noopener">GitHub Repo</a></p>
+        <h1>SWESMIT (Service Worker ECMAScript Modules Issue Tester)</h1>
+        <p>
+            <a href="https://www.hwalab.com" target="_blank" rel="noopener">By HWALab</a> |
+            <a href="https://github.com/hwalab-developer/swesmit" target="_blank" rel="noopener">Fork me on GitHub</a>
+        </p>
     </header>
 
-    <p id="browser"></p>
-
-    <p id="log" class="log"></p>
+    <main>
+        <p id="browser"></p>
+        <p id="log" class="log"></p>
+    </main>
 
     <script src="/scripts/classic.js"></script>
     <script type="module" src="/scripts/app.js"></script>
 
     <script>
-        const log = document.getElementById("log");
-        function dualLog(message) {
-            console.log(message);
-            log.innerHTML += `${message}<br>`;
-        }
-
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function () {
-                navigator.serviceWorker.register('/sw.js').then(function (registration) {
-                    // Registration was successful
-                    dualLog(`ServiceWorker registration successful with scope: ${registration.scope}`);
-                }, function (err) {
-                    // Registration failed :(
-                    dualLog(`ServiceWorker registration failed: ${err}`);
-                });
+        if ("serviceWorker" in navigator) {
+            // Register Service Worker
+            window.addEventListener("load", function () {
+                navigator.serviceWorker.register("/sw.js")
+                    .then(reg => window.docLog(`Service Worker registration successful. Scope is ${reg.scope}`))
+                    .catch(error => window.docLog(`<strong>Service Worker registration failed with ${error}</strong>`));
             });
 
-            navigator.serviceWorker.addEventListener('message', function (event) {
-                dualLog(event.data);
-            });
+            // Listen and log messages from Service Worker
+            navigator.serviceWorker.addEventListener("message", event => window.docLog(event.data));
+        } else {
+            window.docLog("<strong>Service workers not supported</strong>");
         }
     </script>
 </body>

@@ -6,5 +6,4 @@
 import sayHello from "/scripts/hello.js";
 
 sayHello();
-document.getElementById("log").innerHTML += `<b>Hello from a script type module</b><br>`;
-
+window.docLog("Hello from <b><code>/scripts/app.js</code></b>, a &lt;script type=module&gt;");

@@ -8,5 +8,5 @@
  * @returns {void}
  */
 export default function sayHello() {
-    document.getElementById("log").innerHTML += "<b>Hello from an ECMAScript Module</b><br>";
+    window.docLog("Hello from <b><code>/scripts/hello.js</code></b>, a JavaScript (ES) Module");
 }

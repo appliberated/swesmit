@@ -16,7 +16,7 @@ Using the [Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache) to
 The main issue on the chromium issue tracking tool:  
 [832202 - javascript modules not working with cache-api - chromium - Monorail](https://bugs.chromium.org/p/chromium/issues/detail?id=832202)
 
-and other duplicate or merged issues:  
+and other related, duplicate or merged issues:  
 [833501 - CacheStorage API interaction with ES module (using export) results in runtime error - chromium - Monorail](https://bugs.chromium.org/p/chromium/issues/detail?id=833501)  
 [810469 - Caching a JS file with an export result in an error (possibly other JS syntaxes) - chromium - Monorail](https://bugs.chromium.org/p/chromium/issues/detail?id=810469)  
 [Precaching modules throws error to console · Issue #1433 · GoogleChrome/workbox](https://github.com/GoogleChrome/workbox/issues/1433)  
