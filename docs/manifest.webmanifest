@@ -1,7 +1,7 @@
 {
     "name": "SWESMIT",
     "short_name": "SWESMIT",
-    "description": "Service Worker ECMAScript Modules Issue Tester",
+    "description": "Service Worker JavaScript (ES) Modules Issue Tester",
     "start_url": "/",
     "display": "standalone",
     "theme_color": "#FF0000",

@@ -1,7 +1,7 @@
 {
     "name": "swesmit",
     "version": "1.0.0",
-    "description": "Service Worker ECMAScript Modules Issue Tester",
+    "description": "Service Worker JavaScript (ES) Modules Issue Tester",
     "keywords": [],
     "author": "HWALab",
     "license": "MIT",

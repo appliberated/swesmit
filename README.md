@@ -1,7 +1,7 @@
 # SWESMIT
-**Service Worker ECMAScript Modules Issue Tester**
+**Service Worker JavaScript (ES) Modules Issue Tester**
 
-Using the [Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache) to add one or more [ECMAScript Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) (aka native JavaScript modules) in a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/) throws errors in Google Chrome, or worse, crashes the browser. That's sad, because:
+Using the [Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache) to add one or more JavaScript Modules (aka [ES / ECMAScript Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)) in a [Service Worker](https://developers.google.com/web/fundamentals/primers/service-workers/) throws errors in Google Chrome, or worse, crashes the browser. That's sad, because:
 - Service Workers are a key component for writing [Progressive Web Apps](https://en.wikipedia.org/wiki/Progressive_Web_Apps), and other offline-first ready applications, and
 - native JavaScript modules are becoming an essential tool for writing better, lighter, and easier to maintain JavaScript code, especially now when they are supported by most popular browsers.
 

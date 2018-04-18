@@ -3,7 +3,7 @@
  *  https://github.com/hwalab-developer/swesmit
  */
 
-const cacheName = "cache-2";
+const cacheName = "cache-3";
 const filesToCache = [
     "index.html",
     "/styles/normalize.css",

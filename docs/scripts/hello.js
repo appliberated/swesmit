@@ -4,7 +4,7 @@
  */
 
 /**
- * Say hello from an ECMAScript Module.
+ * Say hello from a JavaScript (ES) Module.
  * @returns {void}
  */
 export default function sayHello() {
