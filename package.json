@@ -1,9 +1,9 @@
 {
     "name": "swesmit",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Service Worker JavaScript (ES) Modules Issue Tester",
     "keywords": [],
-    "author": "HWALab",
+    "author": "Appliberated",
     "license": "MIT",
     "eslintConfig": {
         "env": {

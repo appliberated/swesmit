@@ -5,12 +5,12 @@ Using the [Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache) to
 - Service Workers are a key component for writing [Progressive Web Apps](https://en.wikipedia.org/wiki/Progressive_Web_Apps), and other offline-first ready applications, and
 - native JavaScript modules are becoming an essential tool for writing better, lighter, and easier to maintain JavaScript code, especially now when they are supported by most popular browsers.
 
-**[SWESMIT](https://swesmit.hwalab.com)** is a simple and straighforward web app created to test this issue.
+**[SWESMIT](https://swesmit.appliberated.com)** is a simple and straighforward web app created to test this issue.
 
 
 | In Chrome on Android | In Chrome on Windows |
 | --- | --- |
-| ![SWESMIT Chrome Android Screenshot](https://github.com/hwalab-developer/repo-assets/blob/master/swesmit/readme/swesmit-chrome-android.png?raw) | ![SWESMIT Chrome Windows Screenshot](https://github.com/hwalab-developer/repo-assets/blob/master/swesmit/readme/swesmit-chrome-windows.png?raw) |
+| ![SWESMIT Chrome Android Screenshot](assets/repo/readme/swesmit-chrome-android.png) | ![SWESMIT Chrome Windows Screenshot](assets/repo/readme/swesmit-chrome-windows.png) |
 
 ## Issue Tracking
 The main issue on the chromium issue tracking tool:  
@@ -25,11 +25,11 @@ and other related, duplicate or merged issues:
 
 ## Contributions
 
-Contributions are welcome! For feature requests and bug reports please [submit an issue](https://github.com/hwalab-developer/swesmit/issues).
+Contributions are welcome! For feature requests and bug reports please [submit an issue](https://github.com/appliberated/swesmit/issues).
 
 ## Sponsor
 
-SWESMIT (and all HWALab free apps) are supported by [East-Tec](http://www.east-tec.com), the home of [east-tec Eraser](http://www.east-tec.com/eraser/), the privacy tool that quickly and securely covers your online and PC tracks.
+SWESMIT (and all Appliberated free apps and programs) are supported by [East-Tec](https://www.east-tec.com), the home of [east-tec Eraser](https://www.east-tec.com/eraser/), the privacy tool that quickly and securely covers your online and PC tracks.
 
 ## License
 
